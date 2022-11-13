@@ -1,0 +1,44 @@
+---
+import Footer from "../components/Footer.astro";
+import GradientText from "../components/GradientText.astro";
+import LogoBlob from "../components/LogoBlob.astro";
+---
+
+<html lang="de" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="https://use.typekit.net/qhw8asp.css" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>
+      Martin Emmert | Head of Engineering & Digital Experience Consultant
+    </title>
+  </head>
+  <body class="min-h-full flex flex-col bg-warm-grey font-sans">
+    <header class="my-12">
+      <a href="/" title="Back to Homepage" class="block mx-auto w-60">
+        <LogoBlob class="block mx-auto" />
+        <div class="mt-4">
+          <p
+            class="text-3xl leading-none tracking-wider font-display text-center"
+          >
+            <GradientText>martin emmert</GradientText>
+          </p>
+          <p class="font-light font-display text-center text-dark-grey">
+            digital experience consultant
+          </p>
+          <p class="font-light font-display text-center text-dark-grey">
+            & head of engineering
+          </p>
+        </div>
+      </a>
+    </header>
+    <div class="flex flex-col flex-1 justify-between items-center">
+      <article class="w-full max-w-5xl mb-8">
+        <slot />
+      </article>
+      <Footer />
+    </div>
+  </body>
+</html>

@@ -1,20 +1,14 @@
 ---
+import DefaultLayout from "@layouts/default.astro";
+import Prose from "../components/Prose.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>
-      Martin Emmert | Head of Engineering & Digital Experience Consultant
-    </title>
-  </head>
-  <body>
-    <article class="container py-4 mx-auto prose">
+<DefaultLayout>
+  <section class="container py-4 mx-auto">
+    <Prose>
       <h1>Gude!</h1>
       <p>Ich bau gerade meine Website um und bin bald wieder da.</p>
-    </article>
-  </body>
-</html>
+    </Prose>
+  </section>
+  <!-- <ContactForm /> -->
+</DefaultLayout>
