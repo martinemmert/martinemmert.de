@@ -1,0 +1,33 @@
+---
+import { inputTransition } from "./_theme";
+
+const { class: klass, ...props } = Astro.props;
+---
+
+<button
+  class:list={[
+    "rounded",
+    "input-button",
+    "bg-accent-red",
+    "border",
+    "border-solid",
+    "border-accent-red",
+    "text-white",
+    "font-sans",
+    "font-medium",
+    "px-3",
+    "h-[2.625rem]",
+    "outline-none",
+    "hover:bg-accent-red-shade",
+    "focus:bg-accent-red-shade",
+    "focus:ring",
+    "focus:ring-primary-blue",
+    "focus:ring-opacity-40",
+    "focus:drop-shadow-lg",
+    "hover:drop-shadow-lg",
+    ...inputTransition,
+    klass,
+  ]}
+  {...props}
+  ><slot />
+</button>

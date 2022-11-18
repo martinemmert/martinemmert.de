@@ -1,0 +1,21 @@
+---
+import { inputFocus, inputTransition } from "./_theme";
+
+const { class: klass, defaultValue, ...props } = Astro.props;
+
+if (typeof props.type === "undefined") props.type = "text";
+---
+
+<textarea
+  class:list={[
+    "rounded",
+    "border-light-grey",
+    "placeholder-light-grey",
+    "focus:drop-shadow-lg",
+    "hover:drop-shadow",
+    ...inputFocus,
+    ...inputTransition,
+    klass,
+  ]}
+  {...props}>{defaultValue}</textarea
+>

@@ -1,0 +1,10 @@
+---
+const { class: klass, ...props } = Astro.props;
+---
+
+<div
+  class:list={["flex", "flex-col", "space-y-1", "group", klass]}
+  {...props}
+>
+  <slot />
+</div>

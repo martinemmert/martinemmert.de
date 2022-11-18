@@ -1,0 +1,25 @@
+---
+import { inputFocus, inputTransition } from "./_theme";
+
+const { class: klass, ...props } = Astro.props;
+
+if (typeof props.type === "undefined") props.type = "text";
+if (typeof props.id === "undefined" && props.name) props.id = props.name;
+---
+
+<input
+  class:list={[
+    "rounded",
+    "border-light-grey",
+    "text-dark-grey",
+    "font-sans",
+    "placeholder-light-grey",
+    "focus:drop-shadow-lg",
+    "hover:drop-shadow",
+    "peer",
+    ...inputFocus,
+    ...inputTransition,
+    klass,
+  ]}
+  {...props}
+/>

@@ -1,0 +1,17 @@
+---
+const { class: klass, ...props } = Astro.props;
+---
+
+<label
+  class:list={[
+    "font-sans",
+    "font-medium",
+    "text-sm",
+    "text-medium-grey",
+    "group-focus-within:text-dark-grey",
+    klass,
+  ]}
+  {...props}
+>
+  <slot />
+</label>
