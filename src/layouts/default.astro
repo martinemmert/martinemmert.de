@@ -3,71 +3,71 @@ import ContactForm from "../components/ContactForm.astro";
 import Footer from "../components/Footer.astro";
 import GradientText from "../components/GradientText.astro";
 import LogoBlob from "../components/LogoBlob.astro";
+import "../styles/fonts.css";
 ---
 
 <html lang="de" class="h-full">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="https://use.typekit.net/qhw8asp.css" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/apple-touch-icon.png?v=2"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/favicon-32x32.png?v=2"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/favicon-16x16.png?v=2"
-    />
-    <link rel="manifest" href="/site.webmanifest?v=2" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=2" color="#1397e2" />
-    <link rel="shortcut icon" href="/favicon.ico?v=2" />
-    <meta name="msapplication-TileColor" content="#e1e3e3" />
-    <meta name="theme-color" content="#ffffff" />
-    <title>
-      Martin Emmert | Head of Engineering at FastBill & Digital Experience
-      Consultant
-    </title>
-  </head>
-  <body class="relative flex flex-col min-h-full w-full bg-warm-grey font-sans">
-    <div
-      class="block h-full w-full max-h-[32rem] absolute bottom-0 -z-10 bg-[url('/footer-bg.svg')] bg-no-repeat bg-cover bg-top"
-    >
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/apple-touch-icon.png?v=2"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/favicon-32x32.png?v=2"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="/favicon-16x16.png?v=2"
+  />
+  <link rel="manifest" href="/site.webmanifest?v=2" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=2" color="#1397e2" />
+  <link rel="shortcut icon" href="/favicon.ico?v=2" />
+  <meta name="msapplication-TileColor" content="#e1e3e3" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>
+    Martin Emmert | Head of Engineering at FastBill & Digital Experience
+    Consultant
+  </title>
+</head>
+<body class="relative flex flex-col min-h-full w-full bg-warm-grey font-sans">
+<div
+  class="block h-full w-full max-h-[32rem] absolute bottom-0 -z-10 bg-[url('/footer-bg.svg')] bg-no-repeat bg-cover bg-top"
+>
+</div>
+<header class="my-12">
+  <a href="/" title="Back to Homepage" class="block mx-auto w-60">
+    <LogoBlob class="block mx-auto" />
+    <div class="mt-4">
+      <p
+        class="text-3xl leading-none tracking-wider font-display font-thin text-center"
+      >
+        <GradientText>martin emmert</GradientText>
+      </p>
+      <p class="font-light font-display font-thin text-center text-dark-grey mt-1 leading-none">
+        Head of Engineering at FastBill
+      </p>
+      <p class="font-light font-display font-thin text-center text-dark-grey mt-1 leading-none">
+        & Digital Experience Consultant
+      </p>
     </div>
-    <header class="my-12">
-      <a href="/" title="Back to Homepage" class="block mx-auto w-60">
-        <LogoBlob class="block mx-auto" />
-        <div class="mt-4">
-          <p
-            class="text-3xl leading-none tracking-wider font-display text-center"
-          >
-            <GradientText>martin emmert</GradientText>
-          </p>
-          <p class="font-light font-display text-center text-dark-grey">
-            digital experience consultant
-          </p>
-          <p class="font-light font-display text-center text-dark-grey">
-            & head of engineering at FastBill
-          </p>
-        </div>
-      </a>
-    </header>
-    <div class="flex flex-col flex-1 justify-between items-center w-full max-w-5xl [@media(max-width:65rem)]:px-4 mx-auto">
-      <slot />
-      <div class="w-full mt-16">
-        <ContactForm />
-        <Footer />
-      </div>
-    </div>
-  </body>
+  </a>
+</header>
+<div class="flex flex-col flex-1 justify-between items-center w-full max-w-5xl [@media(max-width:65rem)]:px-4 mx-auto">
+  <slot />
+  <div class="w-full mt-16">
+    <ContactForm />
+    <Footer />
+  </div>
+</div>
+</body>
 </html>

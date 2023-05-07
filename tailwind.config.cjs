@@ -23,8 +23,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ["neue-haas-grotesk-text", "sans-serif"],
-      display: ["neue-haas-grotesk-display", "sans-serif"],
+      sans: ["Source Sans Pro", "sans-serif"],
+      display: ["Source Sans Pro", "sans-serif"],
     },
   },
   plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
