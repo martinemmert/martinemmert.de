@@ -4,6 +4,9 @@ import Footer from "../components/Footer.astro";
 import GradientText from "../components/GradientText.astro";
 import LogoBlob from "../components/LogoBlob.astro";
 import "../styles/fonts.css";
+
+const { title } = Astro.props;
+const pageTitle = title ?? 'Martin Emmert'
 ---
 
 <html lang="de" class="h-full">
@@ -35,8 +38,7 @@ import "../styles/fonts.css";
   <meta name="msapplication-TileColor" content="#e1e3e3" />
   <meta name="theme-color" content="#ffffff" />
   <title>
-    Martin Emmert | Head of Engineering at FastBill & Digital Experience
-    Consultant
+    {pageTitle}
   </title>
   <script data-goatcounter="https://martinemmert.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>

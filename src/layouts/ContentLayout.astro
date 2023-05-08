@@ -1,0 +1,14 @@
+---
+import DefaultLayout from "./default.astro";
+import Prose from "../components/Prose.astro";
+
+const {frontmatter} = Astro.props;
+---
+
+<DefaultLayout title={frontmatter.title}>
+  <article class="w-full mb-8">
+    <Prose>
+      <slot />
+    </Prose>
+  </article>
+</DefaultLayout>
