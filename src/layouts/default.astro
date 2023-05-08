@@ -6,7 +6,36 @@ import LogoBlob from "../components/LogoBlob.astro";
 import "../styles/fonts.css";
 
 const { title } = Astro.props;
-const pageTitle = title ?? 'Martin Emmert'
+const pageTitle = title ?? "Martin Emmert";
+
+let data = undefined;
+let isSubmitted = false;
+
+if (Astro.request.method === "POST") {
+  try {
+    const formData = await Astro.request.formData();
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const subject = formData.get("subject");
+    const message = formData.get("message");
+
+    data = {
+      name,
+      email,
+      subject,
+      message
+    };
+
+    await fetch("https://eonmgcondc3e0yj.m.pipedream.net", { method: "POST", body: formData });
+
+    isSubmitted = true;
+
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
 ---
 
 <html lang="de" class="h-full">
@@ -69,7 +98,7 @@ const pageTitle = title ?? 'Martin Emmert'
 <div class="flex flex-col flex-1 justify-between items-center w-full max-w-5xl [@media(max-width:65rem)]:px-4 mx-auto">
   <slot />
   <div class="w-full mt-16">
-    <ContactForm />
+    <ContactForm data={data ?? {}} isSubmitted={isSubmitted} />
     <Footer />
   </div>
 </div>

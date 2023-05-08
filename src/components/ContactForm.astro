@@ -4,18 +4,29 @@ import FormControlContainer from "./FormControlContainer.astro";
 import Input from "./Input.astro";
 import Label from "./Label.astro";
 import Textarea from "./Textarea.astro";
+
+const { data, isSubmitted } = Astro.props;
+
+const { name, email, subject, message } = data;
 ---
 
 <section>
   <form
     class="bg-white rounded-xl px-6 py-5 lg:p-10 space-y-8"
-    netlify
+    method="POST"
   >
     <div class="md:grid md:grid-cols-2 md:gap-8 lg:gap-16 space-y-8 md:space-y-0">
       <fieldset class="space-y-8">
         <FormControlContainer>
           <Label for="name">Your Name</Label>
-          <Input name="name" placeholder="Max Mustermann" autocomplete="name" required="true" />
+          <Input
+            name="name"
+            placeholder="Max Mustermann"
+            autocomplete="name"
+            value={name}
+            disabled={isSubmitted}
+            required="true"
+          />
         </FormControlContainer>
         <FormControlContainer>
           <Label for="email">Your E-Mail</Label>
@@ -24,6 +35,8 @@ import Textarea from "./Textarea.astro";
             name="email"
             placeholder="max@musterweb.tld"
             autocomplete="email"
+            value={email}
+            disabled={isSubmitted}
             required="true"
           />
         </FormControlContainer>
@@ -33,6 +46,8 @@ import Textarea from "./Textarea.astro";
             name="subject"
             placeholder="It is okay, to simply say hi!"
             autocomplete="off"
+            value={subject}
+            disabled={isSubmitted}
             required="true"
           />
         </FormControlContainer>
@@ -45,17 +60,28 @@ import Textarea from "./Textarea.astro";
             id="message"
             class="block h-full min-h-[8rem]"
             placeholder="Hi, my name is Alex!\nI wanted to swing by and say hello."
+            defaultValue={message}
             required="true"
+            disabled={isSubmitted}
           />
         </FormControlContainer>
       </fieldset>
     </div>
-    <div class="flex flex-col md:flex-row items-center justify-end space-y-4 md:space-y-0 md:space-x-2">
-      <p class="text-xs text-medium-grey text-right">
-        Your data is securely transmitted.<br />I respect your data privacy
-        (more).
-      </p>
-      <Button>send message</Button>
-    </div>
+    {isSubmitted &&
+      <div class="flex flex-col md:flex-row items-center justify-end space-y-4 md:space-y-0 md:space-x-2">
+        <p class="text-base text-medium-grey text-right">
+          👍 Thanks for the message, I will get back to you soon.
+        </p>
+      </div>
+    }
+    {!isSubmitted &&
+      <div class="flex flex-col md:flex-row items-center justify-end space-y-4 md:space-y-0 md:space-x-2">
+        <p class="text-xs text-medium-grey text-right">
+          Your data is securely transmitted and never handed to a 3rd party.<br />By submitting this form, you agree to
+          my
+          privacy policies.
+        </p>
+        <Button>send message</Button>
+      </div>}
   </form>
 </section>
