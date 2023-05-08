@@ -8,14 +8,14 @@ import Textarea from "./Textarea.astro";
 
 <section>
   <form
-    onsubmit="alert('not implemented yet')"
     class="bg-white rounded-xl px-6 py-5 lg:p-10 space-y-8"
+    netlify
   >
     <div class="md:grid md:grid-cols-2 md:gap-8 lg:gap-16 space-y-8 md:space-y-0">
       <fieldset class="space-y-8">
         <FormControlContainer>
           <Label for="name">Your Name</Label>
-          <Input name="name" placeholder="Max Mustermann" autocomplete="name" />
+          <Input name="name" placeholder="Max Mustermann" autocomplete="name" required="true" />
         </FormControlContainer>
         <FormControlContainer>
           <Label for="email">Your E-Mail</Label>
@@ -24,6 +24,7 @@ import Textarea from "./Textarea.astro";
             name="email"
             placeholder="max@musterweb.tld"
             autocomplete="email"
+            required="true"
           />
         </FormControlContainer>
         <FormControlContainer>
@@ -32,6 +33,7 @@ import Textarea from "./Textarea.astro";
             name="subject"
             placeholder="It is okay, to simply say hi!"
             autocomplete="off"
+            required="true"
           />
         </FormControlContainer>
       </fieldset>
@@ -43,6 +45,7 @@ import Textarea from "./Textarea.astro";
             id="message"
             class="block h-full min-h-[8rem]"
             placeholder="Hi, my name is Alex!\nI wanted to swing by and say hello."
+            required="true"
           />
         </FormControlContainer>
       </fieldset>
