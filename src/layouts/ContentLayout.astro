@@ -5,7 +5,7 @@ import Prose from "../components/Prose.astro";
 const {frontmatter} = Astro.props;
 ---
 
-<DefaultLayout title={frontmatter.title}>
+<DefaultLayout title={frontmatter.title} robots={frontmatter.robots}>
   <article class="w-full mb-8">
     <Prose>
       <slot />
