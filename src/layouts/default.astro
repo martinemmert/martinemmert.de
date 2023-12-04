@@ -46,7 +46,7 @@ if (Astro.request.method === "POST") {
     {pageTitle}
   </title>
   <meta name="robots" content={metaRobots} />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; img-src 'self' https://*; script-src 'self' 'unsafe-inline' martinemmert.goatcounter.com gc.zgo.at" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; img-src 'self' https://*; script-src 'self' 'unsafe-inline' martinemmert.goatcounter.com gc.zgo.at; connect-src 'self' martinemmert.goatcounter.com" />
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
   <meta name="msapplication-TileColor" content="#e1e3e3" />
