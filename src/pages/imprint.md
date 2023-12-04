@@ -1,6 +1,7 @@
 ---
 title: Martin Emmert | Impressum
 layout: ../layouts/ContentLayout.astro
+robots: noindex, nofollow, noarchive
 ---
 
 Impressum

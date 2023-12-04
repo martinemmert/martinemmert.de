@@ -1,6 +1,7 @@
 ---
 title: Martin Emmert | Datenschutz
 layout: ../layouts/ContentLayout.astro
+robots: noindex, nofollow, noarchive
 ---
 
 <h1 class="adsimple-312496185">Datenschutzerklärung</h1>
